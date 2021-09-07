@@ -38,7 +38,7 @@ Please structure your submission according to the folder structure below:
 	 - Any notes/explanations for your submissions (optional)
 
 ### Submission
-Once you have set up the repository, please grant access to **andrewchak** on GitHub and send an email to andrew@linkby.com to notify us of your submission. Alternatively, you can simply make the repository public.
+Once you have set up the repository, please grant access to **andrewchak** on GitHub and send an email to [andrew@linkby.com](mailto:andrew@linkby.com) to notify us of your submission. Alternatively, you can simply make the repository public.
 
 
 ## Exercises
@@ -46,6 +46,8 @@ Once you have set up the repository, please grant access to **andrewchak** on Gi
 You are tasked with a total of **5** exercises.
 
 We recommend **reading through all exercises before you begin your first one** so you can pace yourself within the allocated timeframe.
+
+---
 
 ### Exercise 1
 
@@ -86,7 +88,7 @@ const data = {
 ```
 #### Your Task
 
- - Write a function that takes the above object as input, and outputs an object that groups items by score and in descending order by ***id***. Your final output should look like this:
+ - Write a function that takes the above object as input, and outputs an object that groups items by ***score*** and in descending order by ***id***. Your final output should look like this:
  ```js
  {
 	 20: [
@@ -201,7 +203,7 @@ This exercise is designed to assess your HTML fundamentals, creativity, and atte
 #### Your Task
 
  - Your task is to set up a demo site for the publisher *Timeout* by replicating this page of their website and setting up Pubfeed integration:
-	https://www.timeout.com/sydney/sport-and-fitness/the-best-online-workouts-you-can-do-at-home
+	[https://www.timeout.com/sydney/sport-and-fitness/the-best-online-workouts-you-can-do-at-home](https://www.timeout.com/sydney/sport-and-fitness/the-best-online-workouts-you-can-do-at-home)
  - There are 2 steps to setting up Pubfeed for a page:
 1. Insert the following JavaScript snippet within the `<head>` of
     the website:
@@ -221,12 +223,15 @@ This exercise is designed to assess your HTML fundamentals, creativity, and atte
 
 For this particular page, the widget should show up at the end of the article - i.e. after the last paragraph of content for `28, App Store` and before the next section `Working hard, or hardly working?`.
 
-- If the integration is set up properly, you should see a Pubfeed article being loaded at the location of the snippet as such:
+- If the integration is set up properly, you should see a random Pubfeed article being loaded at the location of the snippet as such:
 
 ![Pubfeed on Timeout.com](/assets/pubfeed-timeout.jpg?raw=true)
 
 - The exercise is designed to gauge your ability to be creative in replicating the page in the simplest way and shortest time possible. **You are not required to rebuild the page or code the HTML/CSS from scratch.**
-- If you do not already have a local web server to serve static HTML, we recommend you set up a [simple Node.js http server](https://www.npmjs.com/package/http-server) for this exercise and have a script that runs the server on `npm run dev`
+
+- Your submission will include a single `index.html` file that can be run on a web server, as well as any assets required for the page.
+
+- If you do not already have a local web server to serve static HTML, we recommend you set up a [simple Node.js http server](https://www.npmjs.com/package/http-server) for this exercise and have a script that runs the server on `npm run dev` (you can include the JS files in the submission)
 
 
 ## Questions & Assistance
