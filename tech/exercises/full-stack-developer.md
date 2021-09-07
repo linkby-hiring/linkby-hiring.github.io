@@ -1,4 +1,4 @@
-# Linkby - Full-Stack Developer Role 
+# Full-Stack Developer Role 
 
 ## Overview
 The following exercises are designed to help us better understand your technical skillset in determining fit for the Full-Stack Developer role.
