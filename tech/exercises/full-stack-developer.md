@@ -9,6 +9,7 @@ You are not required to use all 4 hours and can submit anytime within the window
 
 Please follow the Submission Guidelines below to submit your work.
 
+
 ## Submission Guidelines
 ### Format
 Your submissions will be hosted on a single GitHub repository. 
@@ -39,6 +40,7 @@ Please structure your submission according to the folder structure below:
 ### Submission
 Once you have set up the repository, please grant access to **andrewchak** on GitHub and send an email to andrew@linkby.com to notify us of your submission. Alternatively, you can simply make the repository public.
 
+
 ## Exercises
 
 You are tasked with a total of **5** exercises.
@@ -63,6 +65,8 @@ const projects = [
  - At the end of the loop, output a summary showing the total number of times that each item is run (e.g. `ID 1 = 150, ID 2 = 250 ...`)
  - You will be assessed on the function being as efficient as possible and using the least lines of code while maintaining accuracy
  - *Note:* As the function is meant to be random, we do not expect the final output to be in exact proportion to their distribution as we understand 500 is a small sample size and will have fluctuations on each run  
+
+---
 
 ### Exercise 2
 
@@ -101,6 +105,8 @@ const data = {
  ```
  
  - You will be assessed on the function being as efficient as possible and using the least lines of code while maintaining accuracy
+
+---
 
 ### Exercise 3
 
@@ -158,6 +164,8 @@ CREATE TABLE IF NOT EXISTS public.clicks
 	 - **num_clicks** (total number of clicks for that account within that month)
 - Save your query in an `index.sql` file for submission
 
+---
+
 ### Exercise 4
 
 At Linkby, we are currently using the [Feathers](https://feathersjs.com/) framework for backend API services.
@@ -177,6 +185,8 @@ This exercise is designed to gauge your ability to work with the framework and n
 	- */campaigns* - throw a [Forbidden error](https://docs.feathersjs.com/api/errors.html#examples) for the `get` method when fetching the record for id `10`	
 - Include all relevant files in your submission (you do not need to include any database files/exports, we will replicate a local copy of the database in our review process)
 - You are free to introduce dummy data at your discretion if you feel it will aid in your completion for this exercise
+
+---
 
 ### Exercise 5
 
@@ -204,16 +214,20 @@ This exercise is designed to assess your HTML fundamentals, creativity, and atte
 <script src="https://staging-pubfeed.linkby.com/widget.js" async></script>
 ```
 2. Insert the following HTML div within the `<body>` where the widget should show up:
+
 ```html
 <div class="linkby-widget" data-type="listicle"></div>
 ```
+
 For this particular page, the widget should show up at the end of the article - i.e. after the last paragraph of content for `28, App Store` and before the next section `Working hard, or hardly working?`.
+
 - If the integration is set up properly, you should see a Pubfeed article being loaded at the location of the snippet as such:
 
 ![Pubfeed on Timeout.com](/assets/pubfeed-timeout.jpg?raw=true)
 
 - The exercise is designed to gauge your ability to be creative in replicating the page in the simplest way and shortest time possible. **You are not required to rebuild the page or code the HTML/CSS from scratch.**
 - If you do not already have a local web server to serve static HTML, we recommend you set up a [simple Node.js http server](https://www.npmjs.com/package/http-server) for this exercise and have a script that runs the server on `npm run dev`
+
 
 ## Questions & Assistance
 
