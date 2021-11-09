@@ -63,7 +63,7 @@ const projects = [
 #### Your Task
 
  - Write a function that takes the array as input, and outputs a random item from the array based on their assigned probability
- - Write a loop that repeats 500 times where a random item is picked by running the function and outputs the ***name*** property of the item each time it is run
+ - Write a loop that repeats 500 times, where a random item is picked by running the function and outputs the ***name*** property of the item each time it is run
  - At the end of the loop, output a summary showing the total number of times that each item is run (e.g. `ID 1 = 150, ID 2 = 250 ...`)
  - You will be assessed on the function being as efficient as possible and using the least lines of code while maintaining accuracy
  - *Note:* As the function is meant to be random, we do not expect the final output to be in exact proportion to their distribution as we understand 500 is a small sample size and will have fluctuations on each run  
@@ -112,6 +112,45 @@ const data = {
 
 ### Exercise 3
 
+Consider the two lines below:
+```js
+console.log(add(4,6));   // Outputs 10
+console.log(add(4)(6));  // Outputs 10
+```
+#### Your Task
+
+ - Write an `add()` method in Javascript which will work properly when invoked using either of the above syntax.
+
+---
+
+### Exercise 4
+
+The Fibonacci sequence is a sequence of numbers where the next number is found by adding up the two numbers before it:
+```js
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+```
+#### Your Task
+
+ - Write a `getFibonaaci()` method in Javascript which takes `N` as input and returns the `Nth` Fibonacci number (eg. the first number `N=1` should return 0)
+
+---
+
+### Exercise 5
+
+Consider the following code snippet:
+```js
+for (var i = 0; i < 5; i++) {
+	setTimeout(function() { console.log(i); }, i * 1000 );
+}
+```
+#### Your Task
+
+ - Can you explain what is wrong with the code above? What can be done to rectify the problem? (include your code implementation in your submission)
+
+---
+
+### Exercise 6
+
 Below are 3 PostgreSQL tables:
 ```sql
 CREATE TABLE IF NOT EXISTS public.accounts
@@ -157,8 +196,8 @@ CREATE TABLE IF NOT EXISTS public.clicks
 
  - Write a single SQL query that gives a report on:
 	 - the total number of clicks per account grouped by year + month
-	 - only include active accounts that have had at least 1 campaign within the last 6 months (i.e. `created_at` is within the last 6 months)
-	 - only include clicks from campaigns that have a duration of more than 1 week (duration is the period between `start_date` and `end_date`)
+	 - only include active accounts that have had at least 1 campaign within the last 6 months (i.e. `created_at` of campaigns table is within the last 6 months)
+	 - only include clicks from campaigns that have a duration of more than 1 week (duration is defined as the period between `start_date` and `end_date` of the campaigns table)
  - Your query output should have 4 columns:
 	 - **account_id**
 	 - **account_name**
@@ -168,7 +207,15 @@ CREATE TABLE IF NOT EXISTS public.clicks
 
 ---
 
-### Exercise 4
+### Exercise 7
+
+Based on the query from Exercise 6, what table index/indices will you set up to optimise the performance of the query?
+
+#### Your Task
+
+ - Write the SQL queries that will create the relevant index/indices
+
+### Exercise 8
 
 At Linkby, we are currently using the [Feathers](https://feathersjs.com/) framework for backend API services.
 
@@ -190,19 +237,21 @@ This exercise is designed to gauge your ability to work with the framework and n
 
 ---
 
-### Exercise 5
+### Exercise 9
 
-The final exercise is based on a real-life scenario that we currently undertake in our Pubfeed integration with publishers.
+The final exercise is based on a real-life scenario that we currently undertake at Linkby.
 
-Imagine a new publisher is interested in setting up Linkby Pubfeed for their website. But before doing so, they would like to get an idea of what the Pubfeed ad unit will look like when it is live on their website.
+Linkby offers a product called **Pubfeed** whereby we insert a Javascript widget onto a publisher's website that serves ad units in the form of native articles.
 
-Your task is then to replicate one of the pages of their website and set up the Pubfeed code snippets so that we can provide a "demo site" to the publisher that showcases what Pubfeed will look like once deployed on their site.  
+When a new publisher is interested in setting up Pubfeed for their website, usually they would like to get an idea of what the ad unit will look like on their website before they implement the integration.
+
+Your task is to take one of the pages of their website and set up the Pubfeed code snippets so that we can provide a "demo site" to the publisher that showcases what Pubfeed will look like once deployed on their site.  
 
 This exercise is designed to assess your HTML fundamentals, creativity, and attention to detail.
 
 #### Your Task
 
- - Your task is to set up a demo site for the publisher *Timeout* by replicating this page of their website and setting up Pubfeed integration:
+ - Set up a demo site for the publisher *Timeout* by replicating this page of their website and setting up Pubfeed integration:
 	[https://www.timeout.com/sydney/sport-and-fitness/the-best-online-workouts-you-can-do-at-home](https://www.timeout.com/sydney/sport-and-fitness/the-best-online-workouts-you-can-do-at-home)
  - There are 2 steps to setting up Pubfeed for a page:
 1. Insert the following JavaScript snippet within the `<head>` of
@@ -227,7 +276,9 @@ For this particular page, the widget should show up at the end of the article - 
 
 ![Pubfeed on Timeout.com](/assets/pubfeed-timeout.jpg?raw=true)
 
-- The exercise is designed to gauge your ability to be creative in replicating the page in the simplest way and shortest time possible. **You are not required to rebuild the page or code the HTML/CSS from scratch.**
+- **You are not required to rebuild the page or code the HTML/CSS from scratch. It is recommended that you load and save the complete webpage as a starting point.**
+
+- You will be assessed on how closely the look and feel of your replicated page matches the page on the publisher's live website (eg. fonts, colours, formatting, images, icons).
 
 - Your submission will include a single `index.html` file that can be run on a web server, as well as any assets required for the page.
 
