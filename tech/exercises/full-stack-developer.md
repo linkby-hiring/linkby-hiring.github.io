@@ -89,38 +89,39 @@ const items = {
 #### Your Task
 
  - Write a single file Vue component (`index.vue` file) that takes the above data object as a component property, such that the component can be used in the following manner:
- ```html
- <MyComponent :items="items" />
- ```
+ 
+```html
+<MyComponent :items="items" />
+```
  
  to dynamically render the following HTML:
  
- ```html
- <div id="items">
-	 <h1>My Items</h1>
-	 <div class="item">
-		 <h3>Items with Score 20</h3>
-		 <ul>
-			 <li>Item 6</li>
-			 <li>Item 4</li>
-			 <li>Item 3</li>
-		 </ul>
-	 </div>
-	 <div class="item">
-		 <h3>Items with Score 30</h3>
-		 <ul>
-			 <li>Item 5</li>
-			 <li>Item 1</li>
-		 </ul>
-	 </div>
-	 <div class="item">
-		 <h3>Items with Score 50</h3>
-		 <ul>
-			 <li class="only-one">Item 2</li>
-		 </ul>
-	 </div>
- </div>
- ```
+```html
+<div id="items">
+	<h1>My Items</h1>
+	<div class="item">
+		<h3>Items with Score 20</h3>
+		<ul>
+			<li>Item 6</li>
+			<li>Item 4</li>
+			<li>Item 3</li>
+		</ul>
+	</div>
+	<div class="item">
+		<h3>Items with Score 30</h3>
+		<ul>
+			<li>Item 5</li>
+			<li>Item 1</li>
+		</ul>
+	</div>
+	<div class="item">
+		<h3>Items with Score 50</h3>
+		<ul>
+			<li class="only-one">Item 2</li>
+		</ul>
+	</div>
+</div>
+```
  
  - Items are grouped by `score` and then sorted in descending order by `name`
  - Where there is only one item within a score grouping, the `<li>` element should have the class `only-one`
