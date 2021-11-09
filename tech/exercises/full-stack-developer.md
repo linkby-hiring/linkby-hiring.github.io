@@ -215,6 +215,8 @@ Based on the query from Exercise 6, what table index/indices will you set up to 
 
  - Write the SQL queries that will create the relevant index/indices
 
+---
+
 ### Exercise 8
 
 At Linkby, we are currently using the [Feathers](https://feathersjs.com/) framework for backend API services.
