@@ -187,6 +187,7 @@ CREATE TABLE IF NOT EXISTS public.campaigns
     name character varying(255) COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
     start_date timestamp with time zone NOT NULL,
     end_date timestamp with time zone NOT NULL,
+    created_at timestamp with time zone,
     CONSTRAINT campaigns_pkey PRIMARY KEY (id),
     CONSTRAINT "campaigns_account_id_foreign_idx" FOREIGN KEY (account_id)
         REFERENCES public.accounts (id) MATCH SIMPLE
