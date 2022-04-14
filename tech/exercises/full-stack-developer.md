@@ -245,7 +245,7 @@ This exercise is designed to gauge your ability to work with the framework and n
 #### Your Task
 
  - Create a Feathers API project from scratch (documentation [here](https://docs.feathersjs.com/))
- - Create a PostgreSQL database and create the 3 tables using the same table definitions from **Exercise 3**
+ - Create a PostgreSQL database and create the 3 tables using the same table definitions from **Exercise 6**
  - Create 3 [services](https://docs.feathersjs.com/guides/basics/services.html) against the 3 tables using the [feathers-sequelize database adapter](https://docs.feathersjs.com/guides/basics/services.html#database-adapters), with PostgreSQL as the database engine. The service endpoints should be:
 	 - */accounts*
 	 - */campaigns*
