@@ -260,50 +260,112 @@ This exercise is designed to gauge your ability to work with the framework and n
 
 ### Exercise 9
 
-The final exercise is based on a real-life scenario that we currently undertake at Linkby.
+Below is a boilerplate Javascript file that has `node-postgres` npm package installed and a data array:
 
-Linkby offers a product called **Pubfeed** whereby we insert a Javascript widget onto a publisher's website that serves ad units in the form of native articles.
+```js
+const { Client } = require('pg')
+const client = new Client()
+await client.connect()
+ 
+const data = [
+	{
+		campaignId: 5550,
+		views: 3,
+		metadata: {
+			overrideDate: "2022-12-13T17:51:54Z",
+			incrementInteger: 4,
+			ignoredDate: "2022-01-01T10:00:00Z"
+		}
+	},
+	{
+		campaignId: 5551,
+		views: 23,
+		metadata: {
+			overrideDate: "2022-12-15T17:51:54Z",
+			incrementInteger: 1,
+			ignoredDate: "2022-02-01T10:00:00Z"
+		}
+	},
+	{
+		campaignId: 5552,
+		views: 56,
+		metadata: {
+			overrideDate: "2022-12-1717:51:54Z",
+			incrementInteger: 6,
+			ignoredDate: "2022-03-01T10:00:00Z"
+		}
+	}
+]
 
-When a new publisher is interested in setting up Pubfeed for their website, usually they would like to get an idea of what the ad unit will look like on their website before they implement the integration.
+// Custom logic can be be inserted here
 
-Your task is to take one of the pages of their website and set up the Pubfeed code snippets so that we can provide a "demo site" to the publisher that showcases what Pubfeed will look like once deployed on their site.  
+const sql = ?
+await client.query(sql)
+await client.end()
+```
 
-This exercise is designed to assess your HTML fundamentals, creativity, and attention to detail.
+There is also a Postgres database table with the following definition:
+
+```sql
+CREATE TABLE IF NOT EXISTS public.campaign_stats
+(
+  	"campaignId" bigint NOT NULL,
+  	views integer,
+	metadata jsonb,
+  	CONSTRAINT campaign_stats_pkey PRIMARY KEY ("campaignId")
+)
+```
 
 #### Your Task
 
- - Set up a demo site for the publisher *Timeout* by replicating this page of their website and setting up Pubfeed integration:
-	[https://www.timeout.com/sydney/sport-and-fitness/the-best-online-workouts-you-can-do-at-home](https://www.timeout.com/sydney/sport-and-fitness/the-best-online-workouts-you-can-do-at-home)
- - There are 2 steps to setting up Pubfeed for a page:
-1. Insert the following JavaScript snippet within the `<head>` of
-    the website:
-```html
-<script>
-  window.pubfeedSettings = {
-      url: 'https://www.timeout.com/sydney/sport-and-fitness/the-best-online-workouts-you-can-do-at-home'
-  }
-</script>
-<script src="https://staging-pubfeed.linkby.com/widget.js" async></script>
+ - In the above boilerplate file you will see the line `const sql = ?`
+ - You are asked to write a single SQL query to replace the `?` variable that will **upsert all records** from the data array into `public.campaign_stats` table, with the following conditions:
+ 	- If a row does not already exist for a given `campaignId`, insert the record exactly as per the payload in the data array
+	- If a row already exists, `views` should be incremented to the existing value (eg. if say a row for `campaignId = 5550` already exists with `views = 6`, then `3` should be incremented to it so that the final result will have `views = 9`)
+	- Likewise if a row already exists, `metadata` should be updated so that:
+	  1. `overrideDate` gets overridden with the value from the data array
+		2. `incrementInteger` gets incremented to the existing value within the JSON (similar in behaviour to `views`)
+		3. `ignoredDate` gets ignored and does not override the existing value
+  - For example, if an existing record for `campaignId = 5550` has `metadata` as:
+
+	```json
+	{
+		"overrideDate": "2022-11-01T11:24:33Z",
+		"incrementInteger": 35,
+		"ignoredDate": "2021-12-01T10:00:00Z"
+	}
+	```
+	then the final `metadata` value for that row should be:
+
+	```json
+	{
+		"overrideDate": "2022-12-13T17:51:54Z",
+		"incrementInteger": 39,
+		"ignoredDate": "2021-12-01T10:00:00Z"
+	}
+	```
+
+ - You are free to add any custom Javascript logic in the area commented `// Custom logic can be be inserted here` to help prepare variables for use in the SQL
+ - It must be a single SQL that does the upsert, and cannot be multiple SQL queries run inside a loop that processes each record one by one within the data array
+
+---
+
+### Exercise 10
+
+Consider an array of 100 promises, each printing its number to console after a random execution time between 100ms to 1s:
+
+```js
+const promises = [...Array(100).keys()].map(i => new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 900) + 100)).then(_ => console.log(i)))
 ```
-2. Insert the following HTML div within the `<body>` where the widget should show up:
 
-```html
-<div class="linkby-widget" data-type="listicle"></div>
-```
+Traditionally if we execute all the promises via `Promise.all(promises)`, all promises will be processed concurrently immediately, and all 100 results will be printed to console after 1s.
 
-For this particular page, the widget should show up at the end of the article - i.e. after the last paragraph of content for `28, App Store` and before the next section `Working hard, or hardly working?`.
+#### Your Task
 
-- If the integration is set up properly, you should see a random Pubfeed article being loaded at the location of the snippet as such:
-
-![Pubfeed on Timeout.com](/assets/pubfeed-timeout.jpg?raw=true)
-
-- **You are not required to rebuild the page or code the HTML/CSS from scratch. It is recommended that you load and save the complete webpage as a starting point.**
-
-- You will be assessed on how closely the look and feel of your replicated page matches the page on the publisher's live website (eg. fonts, colours, formatting, images, icons).
-
-- Your submission will include a single `index.html` file that can be run on a web server, as well as any assets required for the page.
-
-- If you do not already have a local web server to serve static HTML, we recommend you set up a [simple Node.js http server](https://www.npmjs.com/package/http-server) for this exercise and have a script that runs the server on `npm run dev` (you can include the JS files in the submission)
+ - Write a function `runConcurrentPromises(promises, concurrency)` that takes in the list of `promises` as the first parameter and `concurrency` as the second parameter, where `concurrency` represents the maximum number of promises that can be executed concurrently at any given point in time
+ - eg. `runConcurrentPromises(promises, 10)` should execute 10 promises concurrently immediately, and then as soon as the first one finishes, it takes in the next item sequentially in the array, and so on until all items in the array are executed
+ - Please note the requirement is NOT to wait for the first 10 to complete execution and then execute the next 10 (this would be batching). It should work like an assembly line where the next item is processed as soon as one is completed (it is also not based on index within the array as each item is assigned a random execution time)
+ - This function should work against arrays of any size (eg. if the array is increased to 1000 items) and still be able to process only 10 at a time (if `concurrency = 10`)
 
 
 ## Questions & Assistance
