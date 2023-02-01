@@ -3,9 +3,9 @@
 ## Overview
 The following exercises covered some of our daily operations. They help us to understand your skillset in determining fit for the Data Analyst role.
 
-**You will be allocated 4 hours to complete all exercises.**
+**You will be allocated 3 hours to complete all exercises.**
 
-You are not required to use all 4 hours and can submit anytime within the window. If you cannot complete all the exercises within 4 hours, simply submit what you have completed.
+You are not required to use all 3 hours and can submit anytime within the window. If you cannot complete all the exercises within 3 hours, simply submit what you have completed.
 
 Please follow the Submission Guidelines below to submit your work.
 
@@ -117,7 +117,6 @@ You are tasked with a total of **9** exercises.
 
 We recommend **reading through all exercises before you begin your first one** so you can pace yourself within the allocated timeframe.
 
----
 
 ### Exercise 1
 
