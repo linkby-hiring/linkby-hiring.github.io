@@ -36,10 +36,9 @@ The following information should be included in your submission.
 
 ## Datasets
 
-You may download the dataset from the following link, or connect to our testing database.
+You may connect to our testing database to finish the exercise.
 
-- CSV data set
-- PostgresSQL database connection
+> ⚠️ The database connection instruction
 
 There are 6 tables in the datasets. The definition of these tables is listed below.
 
