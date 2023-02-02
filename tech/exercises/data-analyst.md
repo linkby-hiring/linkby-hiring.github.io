@@ -134,9 +134,13 @@ Note: We use the Sydney timezone (AEST / GMT+10) to generate the report.
 
 ### Exercise 3
 
-The programmatic click rate of campaign xxxx.
+Linkby is a CPC platform. We detected some programmatic clicks occasionally.
 
 Programmatic clicks can be determined by repetitive signatures, such as the timestamp, user-agent and IP address.
+
+In this exercise, you are helping one of the country managers to analyse the click quality for some newly signed-up publishers. You may use [this dataset file](https://docs.google.com/spreadsheets/d/1M-Nr0AbOhIxpJfuWEwM2C4zBUl2NIDcbJXFm0l_RR2c/edit?usp=sharing).
+
+You are required to use pivot table feature (in either Excel or Google Sheets) to show your result. In the first sheet of your spreadsheet, briefly explain your findings.
 
 ### Exercise 4
 
