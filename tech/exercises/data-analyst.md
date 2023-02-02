@@ -139,7 +139,9 @@ Programmatic clicks can be determined by repetitive signatures, such as the time
 
 In this exercise, you are helping one of the country managers to analyse the click quality for some newly signed-up publishers. You may use [this dataset file](https://docs.google.com/spreadsheets/d/1M-Nr0AbOhIxpJfuWEwM2C4zBUl2NIDcbJXFm0l_RR2c/edit?usp=sharing).
 
-You are required to use pivot table feature (in either Excel or Google Sheets) to show your result. In the first sheet of your spreadsheet, briefly explain your findings.
+You are required to use pivot table feature to show your result. In the first sheet of your spreadsheet, briefly explain your findings.
+
+Please submit your answer in Excel file or a Google Sheets link.
 
 ### Exercise 4
 
@@ -158,6 +160,8 @@ There was a discussion in the team about the performance of US publishers.
 The management team assigned you to study it. You are asked to create a chart to show the funnel of conversion rates of all US Publishers to explain the situation.
 
 Please create a chart for the funnel that can measure the publishers’ performance. You should include a brief description to explain each conversion rate and why you consider these conversion rates necessary.
+
+Please submit your answer in Excel file or a Google Sheets link.
 
 
 ### Exercise 7
