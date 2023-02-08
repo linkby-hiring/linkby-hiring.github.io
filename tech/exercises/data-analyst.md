@@ -125,7 +125,8 @@ There are 5 tables in the datasets. The definition of these tables are listed be
 - `campaigns_publishers` belongs to `publisher_brands` via the `brandId` column, where `brandId` represents the `id` column in `publisher_brands`
 - `campaigns_publishers` belongs to `accounts` via the `publisherId` column, where `publisherId` represents the `id` column in `accounts`
 - The `budget` column represents the amount out of the total campaign budget that has been allocated to the accepted publisher brand
-- The `storyLinks` column contains an array of URLs of articles that a publisher brand has published to promote the campaign. An empty value here indicates that the publisher has not yet published any articles.
+- The `storyLinks` column contains an array of URLs of articles that a publisher brand has published to promote the campaign.
+- The `storyAt` column represents the time at which the publisher published the article(s) for the campaign. An empty value here indicates that the publisher has not yet published any articles.
 
 `campaign_clicklogs`
 
