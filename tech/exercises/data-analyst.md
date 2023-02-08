@@ -1,6 +1,7 @@
 # Data Analyst Role
 
 ## Overview
+
 The following exercises are designed to help us better understand your technical skillset in determining fit for the Data Analyst role.
 
 **You will be allocated 3 hours to complete all exercises.**
@@ -13,8 +14,7 @@ Please follow the Submission Guidelines below to submit your work.
 
 You are required to make your submission via a single word document (this can be via Google Doc/Microsoft Word).
 
-Please follow the format of the template below:
-https://docs.google.com/document/d/1CN_QNp2eXRafJHLTl1yZWLGIhvjUQi_XkrCLqpGWOXg/edit?usp=sharing
+Please follow the format of [this template](https://docs.google.com/document/d/1CN_QNp2eXRafJHLTl1yZWLGIhvjUQi_XkrCLqpGWOXg/edit?usp=sharing).
 
 We recommend that you make a copy of the file via **File > Make a Copy**, but you can also manually copy the format if you are using Microsoft Word.
 
@@ -28,9 +28,9 @@ For questions that require you to work in Google Sheet/Microsoft Excel, please f
 - Make a copy of the template Google Sheet/Microsoft Excel that we provide
 - Complete the exercise and make relevant changes
 - Share access to the new Google Sheet that you have created (for Excel, email it to us as an attachment)
-- Include a link to that Google Sheet in the answer for that corresponding exercise number in your submission doc
+- Include a link to that Google Sheet in the answer for that corresponding exercise number in your submission document
 
-For the actual submission, please share access to your file to andrew@linkby.com (or email it to us as an attachment if using Microsoft Word), and notify us with a follow up email/message.
+Then share access to your submission document to **andrew@linkby.com** (or email it to us if using Microsoft Word).
 
 ## Background Information
 
@@ -53,7 +53,7 @@ Below are the details to connect to the PostgreSQL database that have been set u
 - **Host:** linkby-hiring.ckjp7onx6q9c.ap-southeast-2.rds.amazonaws.com
 - **Port:** 5432
 - **Database:** linkby
-- **User:** linkby
+- **User:** applicant
 - **Password:** LinkbyHiring2023
 
 There are 5 tables in the datasets. The definition of these tables are listed below.
@@ -94,16 +94,16 @@ There are 5 tables in the datasets. The definition of these tables are listed be
 - The `directBrands` JSON column represents the list of publisher brands to which a campaign has been pitched. Below is an example payload:
 ```json
 {
-  "112": {
-    "name": "Harper's Bazaar (Listicle inclusion) (£2,500)",
-    "createdAt": "2022-08-16T15:10:57Z",
-    "invitedAt": "2022-08-16T16:10:57Z"
-  },
-  "227": {
-    "name": "HuffPost UK (£2,500)",
-    "createdAt": "2022-08-16T15:10:57Z",
-    "invitedAt": "2022-08-16T17:10:57Z"
-  }
+    "112": {
+      "name": "Harper's Bazaar (Listicle inclusion) (£2,500)",
+      "createdAt": "2022-08-16T15:10:57Z",
+      "invitedAt": "2022-08-16T16:10:57Z"
+    },
+    "227": {
+      "name": "HuffPost UK (£2,500)",
+      "createdAt": "2022-08-16T15:10:57Z",
+      "invitedAt": "2022-08-16T17:10:57Z"
+    }
 }
 ```
 - There can be one or multiple objects in the JSON payload
@@ -146,6 +146,7 @@ You are tasked with a total of **8** exercises.
 
 We recommend **reading through all exercises before you begin your first one** so you can pace yourself within the allocated timeframe.
 
+We also recommend that you view the data within each table before you begin so that you can familiarise yourself with the table structure and columns.
 
 ### Exercise 1
 
@@ -158,7 +159,6 @@ The query should return 3 columns:
 - name (`name` of `publisher_brands`)
 - acceptance_rate (number between 0 and 1, where 1 represents 100% acceptance, formatted to 2 decimal places)
 
-
 ### Exercise 2
 
 Write an SQL query to determine the median campaign budget by currency, for campaigns that have been accepted by publishers and have a start date between 1st Apr 2022 and 30 Jun 2022 (in AU time - ie. 1/4/2022 - 30/6/2022 inclusive, based in Australia/Sydney timezone).
@@ -166,7 +166,6 @@ Write an SQL query to determine the median campaign budget by currency, for camp
 The query should return 2 columns:
 - currency
 - median_budget (number formatted to 2 decimal places)
-
 
 ### Exercise 3
 
@@ -177,7 +176,6 @@ Given [this click log dataset file](https://docs.google.com/spreadsheets/d/1M-Nr
 Usually programmatic clicks can be identified based on characteristic across timestamp, user agent and IP address - for example, clicks that happen within 1sec of each other across the same user agent + IP address combination have a high chance to be programmatic.
 
 Please make a copy of the above dataset file, and using pivot tables, briefly explain your approach and findings (make sure you share the file with us and include a link to your file in your answer).
-
 
 ### Exercise 4
 
@@ -191,7 +189,6 @@ The query should return 2 columns:
 - month
 - active_advertisers (integer, 0 if none for that month)
 
-
 ### Exercise 5
 
 Write an SQL query to determine the total revenue generated by each publisher account in US &amp; GB (note: **not** publisher brand) on Core Platform in Dec 2021 (AU time).
@@ -204,7 +201,6 @@ The query should return 3 columns:
 - publisher_id
 - publisher_name
 - total_revenue (number formatted to 2 decimal places)
-
 
 ### Exercise 6
 
@@ -227,7 +223,6 @@ Using a Google Sheet/Excel file, create a chart that compares the funnel convers
 
 Please analyse the conversion rates and briefly explain your findings in the submission document, along with a link to your Google Sheet.
 
-
 ### Exercise 7
 
 Consider the following [dataset file](https://docs.google.com/spreadsheets/d/1c4Z5mjy02XPURretDhAHQhzZ8vsRuXHv2N4vC3HlqyU/edit?usp=sharing).
@@ -245,7 +240,6 @@ RPMs represents **Revenue Per Thousand Impressions** and can be calculated by `(
 
 Each row should uniquely represent the average RPM of a publisher brand for a given month.
 
-
 ### Exercise 8
 
-Imagine you are now part of the senior management team. List 3 reports/queries that you think will be of highest value to Linkby based on the understanding you have so far with regards to advertisers, publishers, campaigns &amp; clicks from this assessment (eg. Top 10 performing publishers across all markets from a revenue perspective). Include brief explanations of why you chose these 3.
+Imagine you are now part of the senior management team. List 3 reports/queries that you think will be of highest value to Linkby based on the understanding you have so far with regards to advertisers, publishers, campaigns &amp; clicks from this assessment (eg. Top 10 performing publishers across all markets). Include brief explanations of why you chose these 3.
