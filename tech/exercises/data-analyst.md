@@ -30,7 +30,7 @@ For questions that require you to work in Google Sheet/Microsoft Excel, please f
 - Share access to the new Google Sheet that you have created (for Excel, email it to us as an attachment)
 - Include a link to that Google Sheet in the answer for that corresponding exercise number in your submission document
 
-Then share access to your submission document to **andrew@linkby.com** (or email it to us if using Microsoft Word).
+Then share access to your submission document to **andrew@linkby.com** and **victor@linkby.com** (or email it to us if using Microsoft Word).
 
 ## Background Information
 
