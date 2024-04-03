@@ -11,7 +11,7 @@ Your submissions will be hosted on a single GitHub repository. You can structure
 ### Time
 **You will be allocated 2 days to conduct this exercise.**
 
-If you are unable to complete the exercises within 2 days, simply submit what you have completed. Submissions after your designated deadline will incur penalty to the assessment of your project, so it is important that you submit your work on time.
+If you are unable to complete the exercise within 2 days, simply submit what you have completed. Submissions after your designated deadline will incur penalty to the assessment of your project, so it is important that you submit your work on time.
 
 ### Submission
 Once you have set up the repository, please grant access to **andrewchak** and **derik-linkby** on GitHub if it is a private repository.
@@ -24,7 +24,8 @@ You are asked to build a small web application that allows users to buy and sell
 1. A user can register a product they want to sell by entering basic product details, setting an initial price, and uploading images.
 2. Other users can explore products registered in the application. When they find a product want to buy, they can either directly purchase the product or make a counter-offer to the seller with a desired price.
 3. When the seller receives a counter-offer from a buyer, they can either accept the counter-offer or make another counter-offer back to the buyer. A history of all counter-offers will be shown to the seller on the Product Details UI (see more under *Product Requirements*). 
-4. Once the seller or buyer accepts the offer, the buyer can proceed to purchase the product via Product Details UI.
+4. There can be an unlimited number of counter-offers back and forth between a buyer and the seller 
+5. Once the seller or buyer accepts the offer, the buyer can proceed to purchase the product via Product Details UI.
 
 ### Application Requirements/Specifications
 
@@ -91,33 +92,33 @@ Upon clicking into an individual product, the Product Details UI will show infor
 6. _Purchase_ button
 	* This button is only available &amp; enabled for buyers when either
 		1. that buyer has not made any counter-offers, or
-		2. that buyer has made a counter-offer and the seller has accepted it
+		2. that buyer has made a counter-offer and the seller has accepted it, or
 		3. the seller has made another counter-offer to the buyer and the buyer has accepted it
 	* If either party has accepted a counter-offer (ie. in `Reserved` status), other buyers will no longer see this button
 	* Upon clicking the _Purchase_ button, set the product status to `Sold` and navigate back to the Product List UI.
 	* This button is not visible when a product is in `Sold` status.
-	* When a product is in `Reserved` status, this button is only  visible for the buyer who made the counter-offer that the seller has accepted.
+	* When a product is in `Reserved` status, this button is only visible for the buyer who originated the accepted counter-offer with the seller.
 7. _Counter Offer_ button
-	* This button only visible when
+	* This button is only visible when
 		* The current logged in user is a buyer, and
-		* The buyer has not yet made any counter-offers to the seller, or the buyer has made a counter-offer but the seller made another counter-offer against this.
+		* The buyer has not yet made any counter-offers to the seller
 8. _Negotiation History_ section
-	* This section only appears when there has been at least one counter-offer by a buyer (appears for other buyers as well, so it's not just limited to the buyer who made the counter-offer)
-	* Show a timeline history of all counter-offers across all buyers in chronological order, including any counter-offers made by the seller to buyers.
+	* This section only appears when there has been at least one counter-offer by a buyer (appears for other buyers as well, so it's not just limited to the buyer who originated the counter-offer)
+	* Show a timeline history of all counter-offers across all buyers in chronological order, including any counter-offers made by the seller to buyers (can be in table/list format)
 	* Each timeline history item consists of the following:
 		* Timestamp of the counter-offer
-		* Name of buyer
+		* Name of the buyer
 		* Whether the counter-offer was made by the buyer or the seller
 		* Price offered (either by the buyer or seller)
 		* Show a _Counter Offer_ button when either:
 			* The current logged in user is the seller and counter-offer was made by a buyer, or
 			* The current logged in user is the buyer, and the seller has made a counter-offer against an earlier counter-offer made by that buyer
-			* When submitting a new counter-offer, the user needs to enter a new price (both for buyers and sellers)
-			* Upon click, log the new counter-offer into the timeline history and return to the list UI
+			* When submitting a new counter-offer, the logged in user needs to enter a new price (both for buyers and sellers)
+			* Upon click, log the new counter-offer into the timeline history and return to the Product List UI
 		* Show an _Accept_ button when either:
 			* The current logged in user is the seller and the counter-offer was made by a buyer, or
 			* The current logged in user is the buyer, and the seller has made a counter-offer against an earlier counter-offer made by that buyer
-			* Upon either the buyer or seller clicks this button, set the product status to `Reserved` and navigate back to the Product List UI
+			* Upon click, set the product status to `Reserved` and navigate back to the Product List UI
 
 ### Required Tech Stacks
 
@@ -125,7 +126,7 @@ You will be building a RESTful API backend service that serves a SPA frontend cl
 
 **Infrastructure**
 
-1. Your service should be able to run both on developer's local machine and on AWS cloud.
+1. Your service should be able to run both on developer's local machine and on AWS cloud (eg. Docker)
 2. Please consider your best options with scalability in mind.
 
 **REST APIs**
@@ -149,6 +150,7 @@ You will be building a RESTful API backend service that serves a SPA frontend cl
 	* Ability to deliver and maintain quality under time pressure
 * There is no right answer/right way of building the web application - your creativity, understanding of the problem, and how you approach solution design under time constraint is a large part of our assessment
 * Additional effort/considerations for UX/design will be considered bonus (eg. look and feel, usability, form validation, notification message to users)
+* If there is sufficient time, implementing a status filter (ie. `Available` / `Reserved` / `Sold`) against the Product List UI will be considered bonus
 
 ## Questions & Assistance
 
