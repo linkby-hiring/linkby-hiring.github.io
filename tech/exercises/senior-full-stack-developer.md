@@ -149,9 +149,10 @@ You will be building a RESTful API backend service that serves a SPA frontend cl
 	* Scalability considerations / efficient database schema &amp; query designs
 	* Ability to deliver and maintain quality under time pressure
 * There is no right answer/right way of building the web application - your creativity, understanding of the problem, and how you approach solution design under time constraint is a large part of our assessment
+* While the web application is primarily intended for desktop, demonstration of the ability to consider mobile responsiveness will be considered bonus 
 * Additional effort/considerations for UX/design will be considered bonus (eg. look and feel, usability, form validation, notification message to users)
 * If there is sufficient time, implementing a status filter (ie. `Available` / `Reserved` / `Sold`) against the Product List UI will be considered bonus
 
-## Questions & Assistance
+## Questions &amp; Assistance
 
 Should you have any questions or require assistance anytime during your allocated time slot, please email [andrew@linkby.com](mailto:andrew@linkby.com).
