@@ -1,40 +1,30 @@
-# Data Analyst Role
+# Data Analyst/Engineer Role
 
 ## Overview
+The following exercises are designed to help us better understand your technical skillset in determining fit for the Data Analyst/Engineer role.
 
-The following exercises are designed to help us better understand your technical skillset in determining fit for the Data Analyst role.
-
-**You will be allocated 3 hours to complete all exercises.**
-
-You are not required to use all 3 hours and can submit anytime within the window. If you cannot complete all the exercises within 3 hours, simply submit what you have completed.
-
-Please follow the Submission Guidelines below to submit your work.
+**You will be allocated 6 hours to complete all exercises.**
+You are not required to use all 6 hours and can submit anytime within the window. If you cannot complete all the exercises within 6 hours, simply submit what you have completed.
 
 ## Submission Guidelines
+You are required to make your submission via a Github repository or Google Doc.
 
-You are required to make your submission via a single word document (this can be via Google Doc/Microsoft Word).
-
-Please follow the format of [this template](https://docs.google.com/document/d/1CN_QNp2eXRafJHLTl1yZWLGIhvjUQi_XkrCLqpGWOXg/edit?usp=sharing).
-
-We recommend that you make a copy of the file via **File > Make a Copy**, but you can also manually copy the format if you are using Microsoft Word.
-
-Please also include the following information at the beginning of the submission:
+Please follow the format of [this template](https://docs.google.com/document/d/1CN_QNp2eXRafJHLTl1yZWLGIhvjUQi_XkrCLqpGWOXg/edit?usp=sharing) and include the following information at the beginning of the submission:
 
 - Your name
 - Allocated date &amp; time slot
-- Any notes/explanations for your submission (optional)
+- Additional notes for your submission (optional)
 
-For questions that require you to work in Google Sheet/Microsoft Excel, please follow the steps below:
-- Make a copy of the template Google Sheet/Microsoft Excel that we provide
-- Complete the exercise and make relevant changes
-- Share access to the new Google Sheet that you have created (for Excel, email it to us as an attachment)
-- Include a link to that Google Sheet in the answer for that corresponding exercise number in your submission document
+Send your final submission to **andrew@linkby.com** and **derik@linkby.com** with a link to your Google Doc/Github repository.
 
-Then share access to your submission document to **andrew@linkby.com** and **victor@linkby.com** (or email it to us if using Microsoft Word).
+### Google Doc
+If you are submitting via Google Doc, make a copy of the above template via **File > Make a Copy**. 
+
+### Github
+If you are submitting via Github repository, follow the same structure of the above template, then grant access to **andrewchak** and **derik-linkby** if it is a private repository. Alternatively, you can simply make the repository public and send us the URL.
 
 ## Background Information
-
-The exercises below are designed to simulate real-life scenarios that we have faced in Linkby.
+Most exercises below are designed to simulate real-life scenarios that we have faced in Linkby.
 
 Below are some background information to help set the context of the exercises:
 
@@ -47,16 +37,15 @@ Below are some background information to help set the context of the exercises:
   - 1 CAD = 1.12 AUD
 
 ## Datasets
-
 Below are the details to connect to the PostgreSQL database that have been set up for the purpose of this assessment:
 
 - **Host:** linkby-hiring.ckjp7onx6q9c.ap-southeast-2.rds.amazonaws.com
 - **Port:** 5432
 - **Database:** linkby
 - **User:** applicant
-- **Password:** LinkbyHiring2023
+- **Password:** LinkbyHiring2024
 
-There are 5 tables in the datasets. The definition of these tables are listed below.
+There are 5 tables in the database. The definition of these tables are listed below.
 
 `accounts`
 
@@ -140,14 +129,23 @@ There are 5 tables in the datasets. The definition of these tables are listed be
   - Core Platform: `context->'ctx'->>'mode' = 'hash'`
   - Pubfeed: `context->'ctx'->>'mode' = 'redir'`
 
+### Assessment Criteria
+
+You will be assessed across multiple facets of data analysis and engineering, including but not limited to:
+* Proficiency in SQL to perform performant and efficient queries
+* Ability to accurately grasp business and data context, as well as identify irrelevant data, under time constraints
+* Competence in Python to perform data analyses and visualisations
+* Creativity in proposing solutions and strategic insight
 
 ## Exercises
 
-You are tasked with a total of **8** exercises.
+You are tasked with a total of **10** exercises.
 
 We recommend **reading through all exercises before you begin your first one** so you can pace yourself within the allocated timeframe.
 
 We also recommend that you view the data within each table before you begin so that you can familiarise yourself with the table structure and columns.
+
+For Python related exercises, you can choose to either export database tables as CSV and work with these datasets statically, or connect directly to the database in the script.
 
 ### Exercise 1
 
@@ -183,12 +181,12 @@ Please make a copy of the above dataset file, and using pivot tables, briefly ex
 Write an SQL query to determine the total number of active advertisers each month between Jan-Jun 2022 (in AU time).
 
 An advertiser is considered active if they have either:
-- Created an approved campaign (ie. not `Draft` or `Awaiting Approval`) in that month (based on `createdAt` of `campaigns` table)
-- Has had at least 1 click incurred in that month
+- Created an approved campaign (ie. not `Draft` or `Awaiting Approval`) in that month (based on `createdAt` of `campaigns` table), OR
+- Has had at least 1 click incurred in that month (based on `createdAt` of `campaign_clicklogs` table)
 
 The query should return 2 columns:
 - month
-- active_advertisers (integer, 0 if none for that month)
+- active_advertisers (ie. number of active advertisers as an integer, 0 if none for that month)
 
 ### Exercise 5
 
@@ -220,27 +218,44 @@ Please calculate the following conversion rates:
 - From "1. Being Invited" to "2. Invitation Accepted"
 - From "2. Invitation Accepted" to "3. Article Published"
 
-Using a Google Sheet/Excel file, create a chart that compares the funnel conversion rates of US publishers vs non-US publishers (you can determine if an account is from US based on `profile->'country'` of `accounts` table).
+Using a Python script or Google Sheet, create a chart that compares the funnel conversion rates of US publishers vs non-US publishers (you can determine if an account is from US based on `profile->'country'` of `accounts` table).
 
 Please analyse the conversion rates and briefly explain your findings in the submission document, along with a link to your Google Sheet.
 
 ### Exercise 7
 
-Consider the following [dataset file](https://docs.google.com/spreadsheets/d/1c4Z5mjy02XPURretDhAHQhzZ8vsRuXHv2N4vC3HlqyU/edit?usp=sharing).
+Using the `campaigns` and `campaign_publishers` tables, write a Python script along with comments and visualisations showcasing campaign performance analysis:
 
-There are two worksheets:
-- `events` - this represents daily events captured for each publisher brand by our Pubfeed product. There are three types of events:
-  - `imp` - Impressions
-  - `pv` - Page Views
-  - `expand` - Ad expansions
-- `revenue` - this represents daily revenue generated for each publisher brand by Pubfeed product
-
-Your task is to make a copy of the above dataset file, and create a new worksheet to calculate the average RPMs per month for all GB publishers.
-
-RPMs represents **Revenue Per Thousand Impressions** and can be calculated by `(total revenue / total impressions ) * 1000`.
-
-Each row should uniquely represent the average RPM of a publisher brand for a given month.
+1. **Load and Merge Data:** Load both datasets and merge them on `campaignId` to create a combined DataFrame.
+2. **Calculate Performance Metrics:**
+  * Group the combined data by `accountId` (for advertisers) and calculate the total budget allocated to campaigns by each advertiser.
+  * Further group by `publisherId` within each advertiser to calculate the total budget accepted by each publisher.
+3. **Performance by Region:**
+  * Using the `accounts` table, add the country information for each advertiser and publisher by merging on `accountId` and `publisherId`, respectively.
+  * Analyse and summarise the total budget and number of campaigns by market (country) for both advertisers and publishers.
+4. **Visualise Data:**
+  * Create a visualisation (e.g., bar chart) showing the total campaign budget allocated by advertisers in different markets.
+  * Create a second visualisation showing the distribution of campaign budgets across the top 10 publishers of each region by total budget.
 
 ### Exercise 8
 
+Using the `accounts` and `campaigns` tables, write a Python script which processes the following:
+
+* **Prepare Historical Data:** Extract the year and quarter from the campaigns `startDate` and calculate the total budget for each quarter.
+* **Trend Analysis:** Use NumPy to calculate the average quarterly budget growth rate over the available historical period for each market (ie. the country of the advertiser account that the campaign belongs to).
+* **Forecast Next Quarter:** Based on the historical growth rate, forecast the total campaign budget for the next quarter for each market.
+* **Evaluate Assumptions:** Discuss the assumptions made in your forecasting model and potential limitations of this approach.
+
+Make sure you include detailed comments explaining each step of your forecast model and analysis in the Python script.
+
+### Exercise 9
+
 Imagine you are now part of the senior management team. List 3 reports/queries that you think will be of highest value to Linkby based on the understanding you have so far with regards to advertisers, publishers, campaigns &amp; clicks from this assessment (eg. Top 10 performing publishers across all markets). Include brief explanations of why you chose these 3.
+
+### Exercise 10
+
+How do you see the trend of AI impacting data analysts/engineers in the next 5 years? Describe the likely outcomes that you expect and what you will do to stay relevant/capitalise on the opportunities.
+
+## Questions &amp; Assistance
+
+Should you have any questions or require assistance anytime during your allocated time slot, please email [andrew@linkby.com](mailto:andrew@linkby.com).
