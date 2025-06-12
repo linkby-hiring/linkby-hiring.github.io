@@ -134,10 +134,12 @@ You will be building a RESTful API backend service that serves a SPA frontend cl
 1. Design and implement a RESTful APIs using _TypeScript_ on Node.js.
 2. Design your database using PostgreSQL.
 3. You are free to choose/use any framework to support your efforts (eg. Express, Hono).
+4. Candidates are encouraged to include unit tests for core business logic, such as counter-offering, direct purchases under various scenario, and other key workflows.
+5. Please provide comprehensive README.md file with clear instructions on how to set up and run the system locally.
 
 **UI Client**
 
-1. Design and implement a SPA application using _Vue.js_ with _JavaScript_ or _TypeScript_.
+1. Design and implement a SPA application using _Vue.js_, _React_, or _Next.js_, with either _JavaScript_ or _TypeScript_.
 2. Given the limited timeframe, it is not a requirement to make the UI beautiful (it is more important to cover all required functionality)
 3. You are free to choose/use an existing UI component library such as MaterialUI or Vuetify, but it is also perfectly fine to use vanilla JS/basic HTML elements.
 
