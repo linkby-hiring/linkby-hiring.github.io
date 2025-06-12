@@ -135,7 +135,7 @@ You will be building a RESTful API backend service that serves a SPA frontend cl
 2. Design your database using PostgreSQL.
 3. You are free to choose/use any framework to support your efforts (eg. Express, Hono).
 4. Candidates are encouraged to include unit tests for core business logic, such as counter-offering, direct purchases under various scenario, and other key workflows.
-5. Please provide comprehensive README.md file with clearn instructions on how to set up and run the system locally.
+5. Please provide comprehensive README.md file with clear instructions on how to set up and run the system locally.
 
 **UI Client**
 
